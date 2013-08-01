@@ -1,6 +1,7 @@
 {
   "name": "glazier-markdown-editor",
   "glazierConfig": {
+    "displayName": "Markdown Editor",
     "consumes": [
       "paneTypeUserStorage",
       "repository"
