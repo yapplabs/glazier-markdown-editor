@@ -3,9 +3,9 @@ import card from 'card';
 
 var TextDoc = {
 
-  save: function(params) {
+  save: function(docText) {
     var service = card.consumers.paneTypeUserStorage;
-    return service.request("setItem", params.name, params.doc).then(null, Conductor.error);
+    return service.request("setItem", "doc", docText).then(null, Conductor.error);
   }
 };
 
