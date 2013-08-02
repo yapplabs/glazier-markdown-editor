@@ -10,8 +10,6 @@ Conductor.require('/vendor/markdown.js');
 Conductor.requireCSS('/css/glazier_card.css');
 Conductor.requireCSS('card.css');
 
-
-
 var card = Conductor.card({
   consumers: {
     'paneTypeUserStorage': Conductor.Oasis.Consumer,
