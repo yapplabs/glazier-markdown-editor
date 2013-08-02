@@ -4,7 +4,8 @@ var TextDocController = Ember.ObjectController.extend({
   docText: "",
   isEditing: false,
   outputtedHTML: function(){
-    var html = markdown.toHTML(this.get("docText"));
+    var doc = this.get('docText');
+    var html = doc && markdown.toHTML(doc);
     return html;
   }.property("docText"),
   save: function(){
