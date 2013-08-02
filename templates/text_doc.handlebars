@@ -1,4 +1,15 @@
-{{view Ember.TextArea valueBinding="docText" rows='8' cols='80'}}
-<div>
+{{#if isEditing}}
+  {{view Ember.TextArea id="md-editor" valueBinding="docText" rows='8' cols='80'}}
+  <br>
   <button {{action 'save'}}>Save</button>
+  <button {{action 'cancel'}}>Cancel</button>
+  <br>
+  <br>
+  <h3>Preview</h3>
+{{else}}
+  <button {{action 'edit'}}>Edit</button>
+{{/if}}
+
+<div id="md-viewer">
+  {{{outputtedHTML}}}
 </div>

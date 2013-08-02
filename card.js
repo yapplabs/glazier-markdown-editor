@@ -4,6 +4,7 @@ import TestConsumer from 'app/consumers/test';
 Conductor.require('/vendor/jquery.js');
 Conductor.require('/vendor/handlebars.js');
 Conductor.require('/vendor/ember-latest.js');
+Conductor.require('/vendor/markdown.js');
 
 /* Uncomment/add required css files */
 Conductor.requireCSS('/css/glazier_card.css');

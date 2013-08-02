@@ -2,9 +2,24 @@ import TextDoc from 'app/models/text_doc';
 
 var TextDocController = Ember.ObjectController.extend({
   docText: "",
+  isEditing: false,
+  outputtedHTML: function(){
+    var html = markdown.toHTML(this.get("docText"));
+    return html;
+  }.property("docText"),
   save: function(){
-    TextDoc.save(this.get('docText'))
+    TextDoc.save(this.get('docText'));
+    this.set("isEditing", false);
+  },
+  edit: function(){
+    console.log("eidt");
+    this.set("isEditing", true);
+  },
+  cancel: function(){
+    console.log("cancel");
+    this.set("isEditing", false);
   }
+
 });
 
 export default TextDocController;
