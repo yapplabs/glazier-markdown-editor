@@ -6,12 +6,10 @@
       "paneTypeUserStorage",
       "repository"
     ],
-    "assetHost": "http://glazier.s3.amazonaws.com",
-    "shortName": "markdown-editor",
-    "repositoryName": "yapplabs/glazier-markdown-editor"
+    "assetHost": "http://glazier.s3.amazonaws.com"
   },
   "version": "0.0.2",
-  "description": "A starting point for making glazier cards",
+  "description": "An editor to create a markdown file for this dashboard",
   "main": "card.js",
   "scripts": {
     "test": "grunt test"
