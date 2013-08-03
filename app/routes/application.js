@@ -3,13 +3,16 @@ import Conductor from 'conductor';
 
 
 var ApplicationRoute = Ember.Route.extend({
-
-  model: function(){
+  events: {
+    renderEdit: function(){
+      this.transitionTo('edit');
+    },
+    edit: function() {
+      this.transitionTo('edit');
+    }
   },
   setupController: function(controller, model) {
     controller.set('repositoryName', card.data.repositoryName);
-    var textDocController = this.controllerFor("textDoc");
-    textDocController.set('docText', card.data.paneTypeUserEntries.doc);
   }
 });
 

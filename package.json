@@ -3,6 +3,7 @@
   "glazierConfig": {
     "displayName": "Markdown Editor",
     "consumes": [
+      "remoteEmberObject",
       "paneTypeUserStorage",
       "repository"
     ],

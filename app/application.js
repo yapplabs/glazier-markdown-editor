@@ -1,12 +1,12 @@
 import Resolver from 'resolver';
 
-var App = Ember.Application.create({
+var Application = Ember.Application.extend({
   modulePrefix: 'app',
   rootElement: '#card',
-  resolver: Resolver
+  resolver: Resolver,
+  Router: Ember.Router
 });
 
-App.deferReadiness();
 requireModule('templates');
 
-export default App;
+export default Application;
