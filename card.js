@@ -30,13 +30,13 @@ var card = Conductor.card({
   activate: function() {
     window.App = this.App = requireModule('app/application').create();
 
-    App.Router.map(function() {
+    this.App.Router.map(function() {
       //this.route('unconnected');
       this.route('edit');
     });
 
-    App.deferReadiness();
-    App.register('card:main', this, { instantiate: false });
+    this.App.deferReadiness();
+    this.App.register('card:main', this, { instantiate: false });
   },
 
   metadata: {
