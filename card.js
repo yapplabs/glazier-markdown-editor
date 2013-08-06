@@ -1,5 +1,4 @@
 import Conductor from 'conductor';
-import TestConsumer from 'app/consumers/test';
 
 Conductor.require('/vendor/jquery.js');
 Conductor.require('/vendor/handlebars.js');
@@ -15,25 +14,21 @@ remoteEmberObjectConsumer.controllers = [ 'cardMetadata' ];
 var card = Conductor.card({
   App: null,
   consumers: {
+    'remoteEmberObject': Conductor.Oasis.Consumer.extend(remoteEmberObjectConsumer),
     'paneTypeUserStorage': Conductor.Oasis.Consumer,
-    'test': TestConsumer,
-    'repository': Conductor.Oasis.Consumer,
-    'remoteEmberObject': Conductor.Oasis.Consumer.extend(remoteEmberObjectConsumer)
+    'repository': Conductor.Oasis.Consumer
   },
-
-  defaultContentDiv: "<div id=\"card\"></div>",
 
   render: function (intent, dimensions) {
     if (!document.getElementById('card')) {
-      document.body.innerHTML = this.defaultContentDiv;
+      document.body.innerHTML = "<div id=\"card\"></div>";
     }
 
     return this.App.render(intent, dimensions);
   },
 
   activate: function() {
-    var Application = requireModule('app/application');
-    window.App = this.App = Application.create();
+    window.App = this.App = requireModule('app/application').create();
 
     App.Router.map(function() {
       //this.route('unconnected');
