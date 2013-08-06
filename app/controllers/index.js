@@ -5,7 +5,11 @@ var IndexController = Ember.Controller.extend({
   canEdit: Ember.computed.alias('cardDataStore.isAdmin'),
   docText: "",
   outputtedHTML: function(){
-    var html = markdown.toHTML(this.get("docText"));
+    var doc = this.get("docText");
+    var html;
+    if(doc) {
+      html = markdown.toHTML(doc);
+    }
     return html;
   }.property("docText")
 
