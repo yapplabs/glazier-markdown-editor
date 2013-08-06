@@ -10,12 +10,10 @@ Conductor.requireCSS('/css/glazier_card.css');
 Conductor.requireCSS('card.css');
 
 import remoteEmberObjectConsumer from 'app/consumers/remote_ember_object';
-
-remoteEmberObjectConsumer.controllers = [
-  'cardMetadata'
-];
+remoteEmberObjectConsumer.controllers = [ 'cardMetadata' ];
 
 var card = Conductor.card({
+  App: null,
   consumers: {
     'paneTypeUserStorage': Conductor.Oasis.Consumer,
     'test': TestConsumer,
