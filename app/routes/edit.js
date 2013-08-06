@@ -18,7 +18,7 @@ var EditRoute = Ember.Route.extend({
       var text = this.controllerFor('edit').get('content');
       var route = this;
       TextDoc.save(text).then(function(){
-        route.transitionTo('index');
+        return route.transitionTo('index');
       }).then(null, Conductor.error);
     }
   }
