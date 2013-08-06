@@ -1,6 +1,4 @@
-var IndexController = Ember.Controller.extend({
-  cardDataStore: null,
-  canEdit: Ember.computed.alias('cardDataStore.isAdmin'),
+var EditController = Ember.Controller.extend({
   html: Ember.computed('content', function(){
     var doc = this.get('content');
     var html;
@@ -9,4 +7,4 @@ var IndexController = Ember.Controller.extend({
   })
 });
 
-export default IndexController;
+export default EditController;
