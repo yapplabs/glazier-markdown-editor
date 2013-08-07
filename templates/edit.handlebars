@@ -1,4 +1,6 @@
-{{textarea value=content rows="8" cols="80"}}
+{{view Ember.TextArea id="md-editor" valueBinding="content" rows='8' cols='80'}}
+<br>
+<button class='save-doc-button' {{action save}}>Save</button>
 
 <h3>Preview</h3>
-{{partial 'index'}}
+{{partial index}}
