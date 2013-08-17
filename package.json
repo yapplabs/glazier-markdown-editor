@@ -4,7 +4,7 @@
     "displayName": "Markdown Editor",
     "consumes": [
       "remoteEmberObject",
-      "paneTypeUserStorage",
+      "adminStorage",
       "repository"
     ],
     "assetHost": "http://glazier.s3.amazonaws.com"

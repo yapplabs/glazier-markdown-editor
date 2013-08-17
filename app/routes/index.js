@@ -7,7 +7,7 @@ var IndexRoute = Ember.Route.extend({
   setupController: function(controller, model) {
     var editController = this.controllerFor('edit');
     // TODO: an actually doc model would cleanup many things.
-    controller.set('content', editController.get('content') || card.data.paneTypeUserEntries.doc);
+    controller.set('content', editController.get('content') || card.data.paneEntries.doc);
   }
 });
 
