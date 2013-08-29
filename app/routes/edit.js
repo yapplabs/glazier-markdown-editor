@@ -10,7 +10,7 @@ var EditRoute = Ember.Route.extend({
   setupController: function(controller, model) {
     controller.set('content', this.controllerFor('index').get('content'));
   },
-  events: {
+  actions: {
     renderDefault: function(){
       this.send('save');
     },
