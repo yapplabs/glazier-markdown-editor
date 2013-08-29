@@ -23,7 +23,7 @@
   "readmeFilename": "README.md",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-cli": "~0.1.8",
+    "grunt-cli": "~0.1.9",
     "grunt-contrib-jshint": "~0.4.3",
     "grunt-es6-module-transpiler": "~0.3.0",
     "grunt-contrib-concat": "~0.3.0",
@@ -35,8 +35,9 @@
     "matchdep": "~0.1.2",
     "grunt-md5": "~0.1.11",
     "grunt-s3": "~0.2.0-alpha.2",
-    "glazier-card-grunt-config": "~0.2.4",
+    "glazier-card-grunt-config": "~0.2.9",
     "lodash": "~1.3.1",
-    "grunt-contrib-sass": "~0.4.1"
+    "grunt-contrib-sass": "~0.4.1",
+    "grunt-contrib-symlink": "~0.2.0"
   }
 }
