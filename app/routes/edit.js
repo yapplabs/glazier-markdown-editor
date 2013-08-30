@@ -8,16 +8,29 @@ var EditRoute = Ember.Route.extend({
     this.controllerFor('cardMetadata').set('isEditing', false);
   },
   setupController: function(controller, model) {
+    controller.set('title', this.controllerFor('application').get('title'));
     controller.set('content', this.controllerFor('index').get('content'));
+  },
+  adminStorageConsumer: function() {
+    return this.container.lookup('consumer:adminStorage');
+  }.property(),
+  saveTitle: function() {
+    var title = this.controller.get('title');
+    this.controllerFor('application').set('title', title);
+    this.get('adminStorageConsumer').request('setItem', 'title', title);
+  },
+  saveMarkdownText: function() {
+    var text = this.controllerFor('edit').get('content');
+    return TextDoc.save(text);
   },
   actions: {
     renderDefault: function(){
       this.send('save');
     },
     save: function() {
-      var text = this.controllerFor('edit').get('content');
+      this.saveTitle();
       var route = this;
-      TextDoc.save(text).then(function(){
+      this.saveMarkdownText().then(function(){
         return route.transitionTo('index');
       }).then(null, Conductor.error);
     }
