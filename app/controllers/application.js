@@ -1,5 +1,6 @@
 var ApplicationController = Ember.ArrayController.extend({
   repositoryName: null,
+  isEditing: false,
   defaultTitle: function() {
     return "Markdown for " + this.get('repositoryName');
   }.property('repositoryName'),
